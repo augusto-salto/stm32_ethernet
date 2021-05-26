@@ -54,6 +54,8 @@ UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 static char *request = "ola mundo";
+uint8_t ip[4] = {192, 168, 15, 100}; 
+uint8_t getway[4] = {192, 168, 15, 1}; 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -106,9 +108,10 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
   MX_USART3_UART_Init();
+	init_ethernet_dinamico();
+	//init_ethernet_estatico(ip, getway);
 	
 	
-	inicia_chip();
   /* USER CODE BEGIN 2 */
 client_request(request);
   /* USER CODE END 2 */

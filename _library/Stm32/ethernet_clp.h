@@ -21,7 +21,8 @@ void W5500_WriteBuff(uint8_t* buff, uint16_t len);
 
 
 // FUNCAO PARA INICIAR O PROGRAMA
-void inicia_chip(void);
+void init_ethernet_estatico(uint8_t ip[4], uint8_t getway[4]);
+void init_ethernet_dinamico(void);
 
 
 // FUNCOES PARA USAR COMO SERVIDOR
