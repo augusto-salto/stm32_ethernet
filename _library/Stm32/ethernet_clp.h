@@ -28,6 +28,7 @@ void init_ethernet_dinamico(void);
 // FUNCOES PARA USAR COMO SERVIDOR
 void SendTCPMessage(void);		// FUNCAO AUXILIAR PARA USAR COMO SERVIDOR !
 void TCPLoopServer(void);						// FUNCAO PARA USAR COMO SERVIDOR !
+
 void requestCliente(void);		// IMPRIME A REQUEST (MENSAGEM DO CLIENTE) !
 
 

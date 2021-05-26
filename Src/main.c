@@ -53,7 +53,7 @@ SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
-static char *request = "ola mundo";
+static  char request[] = "ola mundo";
 uint8_t ip[4] = {192, 168, 15, 100}; 
 uint8_t getway[4] = {192, 168, 15, 1}; 
 /* USER CODE END PV */

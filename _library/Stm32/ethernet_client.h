@@ -4,7 +4,7 @@
 #include "main.h"
 #include "ethernet_clp.h"
 
-void client_request(char* request);
+void client_request(char request[]);
 
 
 

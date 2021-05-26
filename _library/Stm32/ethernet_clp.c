@@ -98,7 +98,6 @@ void Delay_debug(void){
 	
 
 		///// ***** INICIA W5500 COM ATRIBUICAO DE IP VIA DHCP (IP DINAMICO) ***** /////
-
 void init_ethernet_dinamico() {
 	
 
@@ -214,12 +213,11 @@ void init_ethernet_estatico(uint8_t ip[4], uint8_t getway[4]){
 
 void requestCliente(){
 	
-	
-	
-	
-				 char buff[32]; 
-        for(;;) {
+					char buff[32]; 
+       
+						for(;;) {
             int32_t nbytes = recv(0, (uint8_t*)&buff, sizeof(buff)-1);
+							
             if(nbytes == SOCKERR_SOCKSTATUS) {
                 UART_Printf("\r\nConnection closed.\r\n");
                 break;
