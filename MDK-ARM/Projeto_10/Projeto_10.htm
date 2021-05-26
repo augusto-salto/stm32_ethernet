@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Projeto_10\Projeto_10.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Projeto_10\Projeto_10.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon May 24 20:05:50 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed May 26 17:41:57 2021
 <BR><P>
 <H3>Maximum Stack Usage =        516 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -575,8 +575,8 @@ Global Symbols
 <P><STRONG><a name="[93]"></a>DHCP_run</STRONG> (Thumb, 288 bytes, Stack size 24 bytes, dhcp.o(i.DHCP_run))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = DHCP_run &rArr; parseDHCPMSG &rArr; recvfrom &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_DHCP_REQUEST
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_DHCP_DISCOVER
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_DHCP_timeout
@@ -675,9 +675,9 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 <LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_ConversionStop_Disable
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 </UL>
 
 <P><STRONG><a name="[a7]"></a>HAL_I2C_Init</STRONG> (Thumb, 376 bytes, Stack size 16 bytes, stm32f1xx_hal_i2c.o(i.HAL_I2C_Init))
@@ -825,7 +825,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[c5]"></a>HAL_PCD_IRQHandler</STRONG> (Thumb, 340 bytes, Stack size 24 bytes, stm32f1xx_hal_pcd.o(i.HAL_PCD_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = HAL_PCD_IRQHandler &rArr; PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = HAL_PCD_IRQHandler &rArr; PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_SetAddress
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_SuspendCallback
@@ -895,7 +895,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[dc]"></a>HAL_PCD_SetupStageCallback</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, usbd_conf.o(i.HAL_PCD_SetupStageCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 </UL>
@@ -981,8 +981,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTransaction
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_rb
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500_ReadBuff
@@ -1095,7 +1095,7 @@ Global Symbols
 <P><STRONG><a name="[65]"></a>SystemInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, system_stm32f1xx.o(i.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(.text)
 </UL>
-<P><STRONG><a name="[8e]"></a>UART_Printf</STRONG> (Thumb, 40 bytes, Stack size 280 bytes, uart_usb.o(i.UART_Printf))
+<P><STRONG><a name="[8e]"></a>UART_Printf</STRONG> (Thumb, 40 bytes, Stack size 280 bytes, uart_usb_1.o(i.UART_Printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 364<LI>Call Chain = UART_Printf &rArr; CDC_Transmit_FS &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CDC_Transmit_FS
@@ -1389,7 +1389,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[dd]"></a>USBD_LL_SetupStage</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, usbd_core.o(i.USBD_LL_SetupStage))
-<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_StallEP
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdItfReq
@@ -1409,8 +1409,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_DataOutStage
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_DataInStage
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdEPReq
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdEPReq
 </UL>
 
 <P><STRONG><a name="[11e]"></a>USBD_LL_Start</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, usbd_conf.o(i.USBD_LL_Start))
@@ -1433,10 +1433,10 @@ Global Symbols
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_Get_USB_Status
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CDC_TransmitPacket
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlContinueSendData
 <LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CDC_DataIn
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
 </UL>
 
 <P><STRONG><a name="[11a]"></a>USBD_ParseSetupRequest</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, usbd_ctlreq.o(i.USBD_ParseSetupRequest))
@@ -1462,27 +1462,27 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[11b]"></a>USBD_StdDevReq</STRONG> (Thumb, 274 bytes, Stack size 24 bytes, usbd_ctlreq.o(i.USBD_StdDevReq))
-<BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetUSBAddress
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
 <LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_SetConfig
 <LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_GetDescriptor
 <LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 </UL>
 
 <P><STRONG><a name="[11d]"></a>USBD_StdEPReq</STRONG> (Thumb, 336 bytes, Stack size 24 bytes, usbd_ctlreq.o(i.USBD_StdEPReq))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USBD_StdEPReq &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USBD_StdEPReq &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_StallEP
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_IsStallEP
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_ClearStallEP
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 </UL>
@@ -1490,8 +1490,8 @@ Global Symbols
 <P><STRONG><a name="[11c]"></a>USBD_StdItfReq</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, usbd_ctlreq.o(i.USBD_StdItfReq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = USBD_StdItfReq &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_SetupStage
 </UL>
@@ -1567,7 +1567,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[3c]"></a>USB_LP_CAN1_RX0_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.USB_LP_CAN1_RX0_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = USB_LP_CAN1_RX0_IRQHandler &rArr; HAL_PCD_IRQHandler &rArr; PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = USB_LP_CAN1_RX0_IRQHandler &rArr; HAL_PCD_IRQHandler &rArr; PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_IRQHandler
 </UL>
@@ -1623,13 +1623,13 @@ Global Symbols
 <P><STRONG><a name="[94]"></a>WIZCHIP_READ</STRONG> (Thumb, 84 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_READ))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
@@ -1647,8 +1647,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = WIZCHIP_READ_BUF
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_getnetinfo
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_init
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
@@ -1679,9 +1679,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WIZCHIP_WRITE_BUF
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_init
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
 <LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
 <LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_assign
@@ -1759,12 +1759,12 @@ Global Symbols
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;client_request
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
-<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recvfrom
 </UL>
 
@@ -1825,8 +1825,8 @@ Global Symbols
 <P><STRONG><a name="[130]"></a>disconnect</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, socket.o(i.disconnect))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = disconnect &rArr; close &rArr; WIZCHIP_READ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;client_request
@@ -1844,11 +1844,11 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>dns_makequery</STRONG> (Thumb, 176 bytes, Stack size 56 bytes, dns.o(i.dns_makequery))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dns_makequery &rArr; strncpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;put16
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 </UL>
@@ -1891,8 +1891,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
+<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseDHCPMSG
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recvfrom
 </UL>
@@ -1927,7 +1927,6 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_init
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_spiburst_cbfunc
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_spi_cbfunc
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reg_wizchip_cs_cbfunc
@@ -1936,13 +1935,14 @@ Global Symbols
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getIPfromDHCP
 <LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getGWfromDHCP
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getDNSfromDHCP
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_init
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_init
+<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Printf
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
@@ -2011,8 +2011,8 @@ Global Symbols
 <P><STRONG><a name="[12f]"></a>recv</STRONG> (Thumb, 224 bytes, Stack size 48 bytes, socket.o(i.recv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = recv &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
@@ -2024,8 +2024,8 @@ Global Symbols
 <P><STRONG><a name="[9e]"></a>recvfrom</STRONG> (Thumb, 524 bytes, Stack size 64 bytes, socket.o(i.recvfrom))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = recvfrom &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_ignore
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
@@ -2068,8 +2068,8 @@ Global Symbols
 <P><STRONG><a name="[12e]"></a>send</STRONG> (Thumb, 278 bytes, Stack size 40 bytes, socket.o(i.send))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = send &rArr; wiz_send_data &rArr; WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_TX_FSR
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
@@ -2127,8 +2127,8 @@ Global Symbols
 <P><STRONG><a name="[95]"></a>socket</STRONG> (Thumb, 276 bytes, Stack size 32 bytes, socket.o(i.socket))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = socket &rArr; close &rArr; WIZCHIP_READ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
 </UL>
@@ -2341,7 +2341,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[c7]"></a>PCD_EP_ISR_Handler</STRONG> (Thumb, 764 bytes, Stack size 40 bytes, stm32f1xx_hal_pcd.o(i.PCD_EP_ISR_Handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = PCD_EP_ISR_Handler &rArr; HAL_PCD_SetupStageCallback &rArr; USBD_LL_SetupStage &rArr; USBD_StdDevReq &rArr; USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_SetupStageCallback
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_DataOutStageCallback
@@ -2395,11 +2395,11 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[113]"></a>USBD_GetDescriptor</STRONG> (Thumb, 232 bytes, Stack size 24 bytes, usbd_ctlreq.o(i.USBD_GetDescriptor))
-<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USBD_GetDescriptor &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USBD_GetDescriptor &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdDevReq
 </UL>
@@ -2407,10 +2407,10 @@ Local Symbols
 <P><STRONG><a name="[11f]"></a>USBD_SetConfig</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, usbd_ctlreq.o(i.USBD_SetConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = USBD_SetConfig &rArr; USBD_CtlSendStatus &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendStatus
 <LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_SetClassConfig
 <LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_ClrClassConfig
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_StdDevReq
 </UL>
@@ -2461,11 +2461,11 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> usbd_cdc.o(.data)
 </UL>
 <P><STRONG><a name="[d]"></a>USBD_CDC_Setup</STRONG> (Thumb, 172 bytes, Stack size 32 bytes, usbd_cdc.o(i.USBD_CDC_Setup))
-<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = USBD_CDC_Setup &rArr; USBD_CtlPrepareRx &rArr; USBD_LL_PrepareReceive &rArr; HAL_PCD_EP_Receive &rArr; USB_EPStartXfer &rArr; USB_WritePMA
+<BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = USBD_CDC_Setup &rArr; USBD_CtlSendData &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePMA
 </UL>
-<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlPrepareRx
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlSendData
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlError
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_CtlPrepareRx
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> usbd_cdc.o(.data)
 </UL>

@@ -546,12 +546,12 @@ ARM Macro Assembler    Page 9
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=projeto_10\startup_stm32f103xe.d -oprojeto_10\startup_stm32f103xe.
-o -I.\RTE\_Projeto_10 -IC:\Users\Augusto\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.
-0\CMSIS\Core\Include -IC:\Users\Augusto\AppData\Local\Arm\Packs\Keil\STM32F1xx_
-DFP\2.3.0\Device\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB SE
-TA 1" --predefine="__UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" --pre
-define="STM32F10X_HD SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f10
-3xe.lst startup_stm32f103xe.s
+o -I.\RTE\_stm32_ethernet -IC:\Users\Augusto\AppData\Local\Arm\Packs\ARM\CMSIS\
+5.7.0\CMSIS\Core\Include -IC:\Users\Augusto\AppData\Local\Arm\Packs\Keil\STM32F
+1xx_DFP\2.3.0\Device\Include --predefine="__EVAL SETA 1" --predefine="__MICROLI
+B SETA 1" --predefine="__UVISION_VERSION SETA 534" --predefine="_RTE_ SETA 1" -
+-predefine="STM32F10X_HD SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm3
+2f103xe.lst startup_stm32f103xe.s
 
 
 

@@ -39,6 +39,6 @@ projeto_10\main.o: ../Inc/usbd_conf.h
 projeto_10\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 projeto_10\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 projeto_10\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-projeto_10\main.o: ..\..\_biblioteca\uart_usb\uart_usb.h
-projeto_10\main.o: ..\MDK-ARM\ethernet_clp.h
-projeto_10\main.o: ..\MDK-ARM\ethernet_client.h
+projeto_10\main.o: ..\_library\Stm32\uart_usb\uart_usb.h
+projeto_10\main.o: ..\_library\Stm32\ethernet_clp.h
+projeto_10\main.o: ..\_library\Stm32\ethernet_client.h

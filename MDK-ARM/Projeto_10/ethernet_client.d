@@ -1,5 +1,5 @@
-projeto_10\ethernet_client.o: ethernet_client.c
-projeto_10\ethernet_client.o: ethernet_client.h
+projeto_10\ethernet_client.o: ..\_library\Stm32\ethernet_client.c
+projeto_10\ethernet_client.o: ..\_library\Stm32\ethernet_client.h
 projeto_10\ethernet_client.o: ../Inc/main.h
 projeto_10\ethernet_client.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 projeto_10\ethernet_client.o: ../Inc/stm32f1xx_hal_conf.h
@@ -34,9 +34,9 @@ projeto_10\ethernet_client.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_
 projeto_10\ethernet_client.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
 projeto_10\ethernet_client.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
 projeto_10\ethernet_client.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
-projeto_10\ethernet_client.o: ethernet_clp.h
-projeto_10\ethernet_client.o: ..\..\_biblioteca\ioLibrary_Driver-master\Ethernet\socket.h
-projeto_10\ethernet_client.o: ..\..\_biblioteca\ioLibrary_Driver-master\Ethernet\wizchip_conf.h
-projeto_10\ethernet_client.o: ..\..\_biblioteca\ioLibrary_Driver-master\Ethernet\W5500/w5500.h
-projeto_10\ethernet_client.o: ..\..\_biblioteca\ioLibrary_Driver-master\Ethernet\wizchip_conf.h
-projeto_10\ethernet_client.o: ..\..\_biblioteca\uart_usb\uart_usb.h
+projeto_10\ethernet_client.o: ..\_library\Stm32\ethernet_clp.h
+projeto_10\ethernet_client.o: ..\_library\Ethernet\socket.h
+projeto_10\ethernet_client.o: ..\_library\Ethernet\wizchip_conf.h
+projeto_10\ethernet_client.o: ..\_library\Ethernet\W5500/w5500.h
+projeto_10\ethernet_client.o: ..\_library\Ethernet\wizchip_conf.h
+projeto_10\ethernet_client.o: ..\_library\Stm32\uart_usb\uart_usb.h

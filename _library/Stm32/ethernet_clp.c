@@ -1,13 +1,12 @@
 #include	"ethernet_clp.h"
 #include	"wizchip_conf.h"
 #include	"socket.h"
-#include 	"loopback.h"
 #include  "string.h"
 #include  "uart_usb.h"
 #include <stdbool.h>
 #include "dhcp.h"
 #include "dns.h"
-
+//#include 	"loopback.h"
 
 
 

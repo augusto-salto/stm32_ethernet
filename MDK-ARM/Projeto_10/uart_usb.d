@@ -1,5 +1,5 @@
-projeto_10\uart_usb.o: ..\..\_biblioteca\uart_usb\uart_usb.c
-projeto_10\uart_usb.o: ..\..\_biblioteca\uart_usb\uart_usb.h
+projeto_10\uart_usb.o: ..\_library\Stm32\uart_usb\uart_usb.c
+projeto_10\uart_usb.o: ..\_library\Stm32\uart_usb\uart_usb.h
 projeto_10\uart_usb.o: ../Inc/usbd_cdc_if.h
 projeto_10\uart_usb.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
 projeto_10\uart_usb.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
