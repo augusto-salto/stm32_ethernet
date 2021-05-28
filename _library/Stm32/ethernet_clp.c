@@ -175,30 +175,27 @@ void init_ethernet_dinamico() {
 
 
 		///// ***** INICIA O W5500 COM ATRIBUICAO DE IP ESTATICO (IP FIXO)***** /////
-void init_ethernet_estatico(uint8_t ip[4], uint8_t getway[4]){
-	
-	
-	
+void init_ethernet_estatico(uint8_t ip[4], uint8_t getway[4]){						// Passa o ip e o getway como parametro
 	
 	Delay_debug();
 
-	reg_wizchip_cs_cbfunc(cs_sel, cs_desel);
-  reg_wizchip_spi_cbfunc(spi_rb, spi_wb);
-	
-	wizchip_init(bufSize, bufSize);
-	//wizchip_init((uint8_t*)4 ,(uint8_t*)4);
-  wiz_NetInfo netInfo = { .mac 	= {0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef},	// Mac address
-                          .ip 	= {ip[0], ip[1], ip[2], ip[3]},				// IP address  --->  .ip 	= {192, 168, 15, 101},	
-                          .sn 	= {255, 255, 255, 0},					// Subnet mask
+	reg_wizchip_cs_cbfunc(cs_sel, cs_desel);																								// Informa quais as funcoes para chip select e deselect
+  reg_wizchip_spi_cbfunc(spi_rb, spi_wb);																									// Informa as funcoes de leitura e escrita de byte via barramento SPI
+	wizchip_init(bufSize, bufSize);																													// Informa o tamanho dos buffers de escrita e leitura parea o chip W5500
+  
+	wiz_NetInfo netInfo = {																																	// Cria uma variavel do tipo struct e informa o endereco mac,
+													.mac 	= {0x00, 0x08, 0xdc, 0xab, 0xcd, 0xef},										// Mac address
+                          .ip 	= {ip[0], ip[1], ip[2], ip[3]},														// IP address  --->  .ip 	= {192, 168, 15, 101},	
+                          .sn 	= {255, 255, 255, 0},																			// Subnet mask
                           .gw 	= {getway[0], getway[1], getway[2], getway[3]}};					// Gateway address
   wizchip_setnetinfo(&netInfo);
   wizchip_getnetinfo(&netInfo);
 		
-			UART_Printf("IP:  %d.%d.%d.%d\r\nGW:  %d.%d.%d.%d\r\nNet: %d.%d.%d.%d\r\nDNS: %d.%d.%d.%d\r\n",		// Imprime os enderecos IP, DNS E SUB*REDE obtidos
-        netInfo.ip[0], netInfo.ip[1], netInfo.ip[2], netInfo.ip[3],
-        netInfo.gw[0], netInfo.gw[1], netInfo.gw[2], netInfo.gw[3],
-        netInfo.sn[0], netInfo.sn[1], netInfo.sn[2], netInfo.sn[3],
-        dns[0], dns[1], dns[2], dns[3]
+	UART_Printf("IP:  %d.%d.%d.%d\r\nGW:  %d.%d.%d.%d\r\nNet: %d.%d.%d.%d\r\nDNS: %d.%d.%d.%d\r\n",		// Imprime os enderecos IP, DNS E SUB*REDE obtidos
+    netInfo.ip[0], netInfo.ip[1], netInfo.ip[2], netInfo.ip[3],
+    netInfo.gw[0], netInfo.gw[1], netInfo.gw[2], netInfo.gw[3],
+    netInfo.sn[0], netInfo.sn[1], netInfo.sn[2], netInfo.sn[3],
+    dns[0], dns[1], dns[2], dns[3]
     );
 													
 													
