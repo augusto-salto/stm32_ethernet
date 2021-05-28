@@ -39,7 +39,7 @@
 "projeto_10\socket.o"
 "projeto_10\wizchip_conf.o"
 "projeto_10\w5500.o"
-"projeto_10\uart_usb_1.o"
+"projeto_10\uart_usb.o"
 "projeto_10\dns.o"
 "projeto_10\dhcp.o"
 --library_type=microlib --strict --scatter "Projeto_10\Projeto_10.sct"
