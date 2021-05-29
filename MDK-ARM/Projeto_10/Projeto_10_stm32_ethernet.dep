@@ -373,7 +373,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8ED772)
 I (..\_library\Stm32\uart_usb\uart_usb.h)(0x60AA7840)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8ED772)
 I (..\_library\Internet\DHCP\dhcp.h)(0x606EDD3B)
-I (..\_library\Internet\DNS\dns.h)(0x606EDD3B)
+I (..\_library\Internet\DNS\dns.h)(0x60B29264)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x6099AED7)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\_library\Application -I ..\_library\Ethernet\W5500 -I ..\_library\Ethernet -I ..\_library\Stm32\uart_usb -I ..\_library\Stm32 -I ..\_library\Stm32\uart_usb -I ..\_library\Internet\DNS -I ..\_library\Internet\DHCP -I G:\Keil-Arm\ARM\ARMCC\include-I.\RTE\_stm32_ethernet-IC:\Users\Augusto\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Augusto\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o projeto_10\stm32f1xx_hal_gpio_ex.o --omf_browse projeto_10\stm32f1xx_hal_gpio_ex.crf --depend projeto_10\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6099AED7)
 I (../Inc/stm32f1xx_hal_conf.h)(0x60AA7608)
@@ -1345,7 +1345,7 @@ I (..\_library\Ethernet\socket.h)(0x606EDD3B)
 I (..\_library\Ethernet\wizchip_conf.h)(0x60AA7737)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8ED772)
 I (..\_library\Ethernet\W5500/w5500.h)(0x606EDD3B)
-I (..\_library\Internet\DNS\dns.h)(0x606EDD3B)
+I (..\_library\Internet\DNS\dns.h)(0x60B29264)
 F (..\_library\Internet\DHCP\dhcp.c)(0x606EDD3B)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\_library\Application -I ..\_library\Ethernet\W5500 -I ..\_library\Ethernet -I ..\_library\Stm32\uart_usb -I ..\_library\Stm32 -I ..\_library\Stm32\uart_usb -I ..\_library\Internet\DNS -I ..\_library\Internet\DHCP -I G:\Keil-Arm\ARM\ARMCC\include-I.\RTE\_stm32_ethernet-IC:\Users\Augusto\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Augusto\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="534" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o projeto_10\dhcp.o --omf_browse projeto_10\dhcp.crf --depend projeto_10\dhcp.d)
 I (..\_library\Ethernet\socket.h)(0x606EDD3B)
 I (..\_library\Ethernet\wizchip_conf.h)(0x60AA7737)

@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Projeto_10\Projeto_10.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Projeto_10\Projeto_10.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 29 16:08:09 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 29 16:13:41 2021
 <BR><P>
 <H3>Maximum Stack Usage =        476 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -589,7 +589,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9b]"></a>DNS_run</STRONG> (Thumb, 148 bytes, Stack size 64 bytes, dns.o(i.DNS_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = DNS_run &rArr; recvfrom &rArr; wiz_recv_data &rArr; WIZCHIP_READ_BUF
+<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = DNS_run &rArr; parseDNSMSG &rArr; dns_answer &rArr; parse_name
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
@@ -1849,8 +1849,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;client_request
 </UL>
 
-<P><STRONG><a name="[134]"></a>dns_answer</STRONG> (Thumb, 174 bytes, Stack size 40 bytes, dns.o(i.dns_answer))
-<BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = dns_answer &rArr; parse_name
+<P><STRONG><a name="[134]"></a>dns_answer</STRONG> (Thumb, 174 bytes, Stack size 100 bytes, dns.o(i.dns_answer))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = dns_answer &rArr; parse_name
 </UL>
 <BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_name
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get16
@@ -1858,8 +1858,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseDNSMSG
 </UL>
 
-<P><STRONG><a name="[9c]"></a>dns_makequery</STRONG> (Thumb, 176 bytes, Stack size 56 bytes, dns.o(i.dns_makequery))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = dns_makequery &rArr; strncpy
+<P><STRONG><a name="[9c]"></a>dns_makequery</STRONG> (Thumb, 176 bytes, Stack size 112 bytes, dns.o(i.dns_makequery))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = dns_makequery &rArr; strncpy
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;put16
@@ -1870,8 +1870,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 </UL>
 
-<P><STRONG><a name="[13b]"></a>dns_question</STRONG> (Thumb, 30 bytes, Stack size 32 bytes, dns.o(i.dns_question))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = dns_question &rArr; parse_name
+<P><STRONG><a name="[13b]"></a>dns_question</STRONG> (Thumb, 30 bytes, Stack size 92 bytes, dns.o(i.dns_question))
+<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = dns_question &rArr; parse_name
 </UL>
 <BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_name
 </UL>
@@ -1986,7 +1986,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[9f]"></a>parseDNSMSG</STRONG> (Thumb, 214 bytes, Stack size 24 bytes, dns.o(i.parseDNSMSG))
-<BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = parseDNSMSG &rArr; dns_answer &rArr; parse_name
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = parseDNSMSG &rArr; dns_answer &rArr; parse_name
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get16
