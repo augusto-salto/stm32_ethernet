@@ -10,17 +10,17 @@
 #define RECV_BUFFER_LENGTH  2048
 
 
-#define INICIO			"PATCH /stm32-ethernet-default-rtdb.json HTTP/1.1\r\n"
-#define HOST			"HOST: "
-#define CONN			"Content-Type: application/json\r\n"
+#define INICIO		"PATCH /stm32-ethernet-default-rtdb.json HTTP/1.1\r\n"
+#define HOST			"HOST: stm32-ethernet-default-rtdb.firebaseio.com\r\n"
+#define CONN			"Content-Type: text/plain;charset=UTF-8\r\n"
 #define LENGHT			"Content-Length: 20\r\n"
 #define JSON			"{\"nome4\":21}\r\n"
 
 
 static const char FIREBASE[] = INICIO HOST CONN LENGHT JSON;
 	
-static const uint8_t server_ip[] = {192, 168, 15, 18};
-static const uint16_t server_port = 5000;
+static const uint8_t server_ip[] = {35, 201, 97, 85};
+static const uint16_t server_port = 443;
 static uint16_t length = 0;
 static uint8_t recv_buf[RECV_BUFFER_LENGTH];
 static  const char *request1 = 0;

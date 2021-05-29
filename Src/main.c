@@ -113,6 +113,7 @@ int main(void)
 	
 	
   /* USER CODE BEGIN 2 */
+consulta_DNS();
 client_request(request);
   /* USER CODE END 2 */
 

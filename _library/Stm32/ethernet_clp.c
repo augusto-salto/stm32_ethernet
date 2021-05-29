@@ -349,7 +349,7 @@ void consulta_DNS(){
 	
 	// FUNCAO QUE CONSULTA UM ENDERECO DE UM SITE E RETORNA O IP DELE NA VARIAVEL ADDR
 	
-char domain_name[] = "eax.me";
+	char domain_name[] = "stm32-ethernet-default-rtdb.firebaseio.com";
 	
 	
 	// INICIANDO O DNS //		
@@ -360,7 +360,7 @@ char domain_name[] = "eax.me";
     int8_t res = DNS_run(dns, (uint8_t*)&domain_name, addr);
 	
 			if(res != 1) {
-      UART_Printf("DNS_run() falhou. Retorno = %d", res);
+      UART_Printf("DNS_run() falhou. Retorno = %d\r\n", res);
 				return;
         }
 			
