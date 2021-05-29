@@ -12,6 +12,8 @@
 
 #define ETH_MAX_BUF_SIZE	2048
 
+
+
 unsigned char ethBuf0[ETH_MAX_BUF_SIZE];
 unsigned char ethBuf1[ETH_MAX_BUF_SIZE];
 unsigned char ethBuf2[ETH_MAX_BUF_SIZE];

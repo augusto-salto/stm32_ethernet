@@ -8,8 +8,17 @@
 
 #define HTTP_PORT       1000
 #define RECV_BUFFER_LENGTH  2048
-#define REQUISICAO  OLA_MUNDO
 
+
+#define INICIO			"PATCH /stm32-ethernet-default-rtdb.json HTTP/1.1\r\n"
+#define HOST			"HOST: "
+#define CONN			"Content-Type: application/json\r\n"
+#define LENGHT			"Content-Length: 20\r\n"
+#define JSON			"{\"nome4\":21}\r\n"
+
+
+static const char FIREBASE[] = INICIO HOST CONN LENGHT JSON;
+	
 static const uint8_t server_ip[] = {192, 168, 15, 18};
 static const uint16_t server_port = 5000;
 static uint16_t length = 0;
@@ -18,10 +27,15 @@ static  const char *request1 = 0;
 
 void client_request(char request[]){
 
-	request1 = request;
-  length = strlen(request);
+	/*request1 = request;
+  length = strlen(request);*/
+		request1 = FIREBASE;
+  length = strlen(FIREBASE);
+	
+	
 	uint8_t err = 2;
 	
+	UART_Printf("%s", FIREBASE);
 	
 	UART_Printf("\r\n Cliente iniciou uma request");
 	err = socket(HTTP_SOCKET, Sn_MR_TCP, 10888, 0);										// SE HOUVER ALGUM ERRO, RETORNA O CODIGO DO ERRO!
