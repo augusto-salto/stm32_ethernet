@@ -2,7 +2,7 @@ projeto_10\system_stm32f1xx.o: ../Src/system_stm32f1xx.c
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Include/core_cm3.h
-projeto_10\system_stm32f1xx.o: G:\Keil-Arm\ARM\ARMCC\Bin\..\include\stdint.h
+projeto_10\system_stm32f1xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -13,7 +13,7 @@ projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal
 projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
 projeto_10\system_stm32f1xx.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-projeto_10\system_stm32f1xx.o: G:\Keil-Arm\ARM\ARMCC\Bin\..\include\stddef.h
+projeto_10\system_stm32f1xx.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 projeto_10\system_stm32f1xx.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
