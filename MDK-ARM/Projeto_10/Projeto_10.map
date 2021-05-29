@@ -995,6 +995,15 @@ Section Cross References
     uart_usb.o(i.UART_Printf) refers to printfa.o(i.__0vsnprintf) for vsnprintf
     uart_usb.o(i.UART_Printf) refers to strlen.o(.text) for strlen
     uart_usb.o(i.UART_Printf) refers to usbd_cdc_if.o(i.CDC_Transmit_FS) for CDC_Transmit_FS
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_init) for wiz_tls_init
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_connect) for wiz_tls_connect
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_read) for wiz_tls_read
+    ethernet_ssl.o(i.init_ssl) refers to uart_usb.o(i.UART_Printf) for UART_Printf
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_write) for wiz_tls_write
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_close_notify) for wiz_tls_close_notify
+    ethernet_ssl.o(i.init_ssl) refers to sslinterface.o(i.wiz_tls_deinit) for wiz_tls_deinit
+    ethernet_ssl.o(i.init_ssl) refers to ethernet_ssl.o(.data) for .data
+    ethernet_ssl.o(i.init_ssl) refers to ethernet_ssl.o(.bss) for .bss
     dns.o(i.DNS_init) refers to dns.o(.data) for .data
     dns.o(i.DNS_run) refers to socket.o(i.socket) for socket
     dns.o(i.DNS_run) refers to dns.o(i.dns_makequery) for dns_makequery
@@ -3046,6 +3055,10 @@ Removing Unused input sections from the image.
     Removing ethernet_ssl.o(.rev16_text), (4 bytes).
     Removing ethernet_ssl.o(.revsh_text), (4 bytes).
     Removing ethernet_ssl.o(.rrx_text), (6 bytes).
+    Removing ethernet_ssl.o(i.init_ssl), (124 bytes).
+    Removing ethernet_ssl.o(.bss), (2048 bytes).
+    Removing ethernet_ssl.o(.data), (12 bytes).
+    Removing ethernet_ssl.o(.data), (4 bytes).
     Removing dns.o(i.DNS_time_handler), (16 bytes).
     Removing dhcp.o(i.DHCP_stop), (20 bytes).
     Removing dhcp.o(i.DHCP_time_handler), (16 bytes).
@@ -3558,7 +3571,7 @@ Removing Unused input sections from the image.
     Removing x509_crt.o(.constdata), (16 bytes).
     Removing x509_crt.o(.conststring), (1030 bytes).
 
-1044 unused section(s) (total 147584 bytes) removed from the image.
+1048 unused section(s) (total 149772 bytes) removed from the image.
 
 ==============================================================================
 
@@ -4612,37 +4625,37 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x00000130   Data   RO            3    RESET               startup_stm32f103xe.o
-    0x08000130   0x08000130   0x00000000   Code   RO         8138  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000130   0x08000130   0x00000004   Code   RO         8464    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x08000134   0x08000134   0x00000004   Code   RO         8467    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000138   0x08000138   0x00000000   Code   RO         8469    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000138   0x08000138   0x00000000   Code   RO         8471    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000138   0x08000138   0x00000008   Code   RO         8472    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000140   0x08000140   0x00000004   Code   RO         8479    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000144   0x08000144   0x00000000   Code   RO         8474    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000144   0x08000144   0x00000000   Code   RO         8476    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000144   0x08000144   0x00000004   Code   RO         8465    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000130   0x08000130   0x00000000   Code   RO         8149  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000130   0x08000130   0x00000004   Code   RO         8475    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x08000134   0x08000134   0x00000004   Code   RO         8478    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         8480    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000138   0x08000138   0x00000000   Code   RO         8482    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000138   0x08000138   0x00000008   Code   RO         8483    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000140   0x08000140   0x00000004   Code   RO         8490    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000144   0x08000144   0x00000000   Code   RO         8485    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000144   0x08000144   0x00000000   Code   RO         8487    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000144   0x08000144   0x00000004   Code   RO         8476    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000148   0x08000148   0x00000024   Code   RO            4    .text               startup_stm32f103xe.o
-    0x0800016c   0x0800016c   0x00000062   Code   RO         8142    .text               mc_w.l(uldiv.o)
-    0x080001ce   0x080001ce   0x00000020   Code   RO         8144    .text               mc_w.l(llushr.o)
-    0x080001ee   0x080001ee   0x00000040   Code   RO         8151    .text               mc_w.l(memmovea.o)
-    0x0800022e   0x0800022e   0x00000024   Code   RO         8153    .text               mc_w.l(memseta.o)
-    0x08000252   0x08000252   0x00000018   Code   RO         8157    .text               mc_w.l(strncpy.o)
-    0x0800026a   0x0800026a   0x00000014   Code   RO         8159    .text               mc_w.l(strchr.o)
-    0x0800027e   0x0800027e   0x0000000e   Code   RO         8161    .text               mc_w.l(strlen.o)
-    0x0800028c   0x0800028c   0x00000012   Code   RO         8167    .text               mc_w.l(strcpy.o)
-    0x0800029e   0x0800029e   0x0000002c   Code   RO         8482    .text               mc_w.l(uidiv.o)
-    0x080002ca   0x080002ca   0x0000001e   Code   RO         8484    .text               mc_w.l(llshl.o)
-    0x080002e8   0x080002e8   0x00000000   Code   RO         8488    .text               mc_w.l(iusefp.o)
-    0x080002e8   0x080002e8   0x0000014e   Code   RO         8489    .text               mf_w.l(dadd.o)
-    0x08000436   0x08000436   0x000000e4   Code   RO         8491    .text               mf_w.l(dmul.o)
-    0x0800051a   0x0800051a   0x000000de   Code   RO         8493    .text               mf_w.l(ddiv.o)
-    0x080005f8   0x080005f8   0x00000030   Code   RO         8495    .text               mf_w.l(dfixul.o)
-    0x08000628   0x08000628   0x00000030   Code   RO         8497    .text               mf_w.l(cdrcmple.o)
-    0x08000658   0x08000658   0x00000024   Code   RO         8499    .text               mc_w.l(init.o)
-    0x0800067c   0x0800067c   0x00000024   Code   RO         8502    .text               mc_w.l(llsshr.o)
-    0x080006a0   0x080006a0   0x000000ba   Code   RO         8505    .text               mf_w.l(depilogue.o)
-    0x0800075a   0x0800075a   0x00000056   Code   RO         8515    .text               mc_w.l(__dczerorl2.o)
+    0x0800016c   0x0800016c   0x00000062   Code   RO         8153    .text               mc_w.l(uldiv.o)
+    0x080001ce   0x080001ce   0x00000020   Code   RO         8155    .text               mc_w.l(llushr.o)
+    0x080001ee   0x080001ee   0x00000040   Code   RO         8162    .text               mc_w.l(memmovea.o)
+    0x0800022e   0x0800022e   0x00000024   Code   RO         8164    .text               mc_w.l(memseta.o)
+    0x08000252   0x08000252   0x00000018   Code   RO         8168    .text               mc_w.l(strncpy.o)
+    0x0800026a   0x0800026a   0x00000014   Code   RO         8170    .text               mc_w.l(strchr.o)
+    0x0800027e   0x0800027e   0x0000000e   Code   RO         8172    .text               mc_w.l(strlen.o)
+    0x0800028c   0x0800028c   0x00000012   Code   RO         8178    .text               mc_w.l(strcpy.o)
+    0x0800029e   0x0800029e   0x0000002c   Code   RO         8493    .text               mc_w.l(uidiv.o)
+    0x080002ca   0x080002ca   0x0000001e   Code   RO         8495    .text               mc_w.l(llshl.o)
+    0x080002e8   0x080002e8   0x00000000   Code   RO         8499    .text               mc_w.l(iusefp.o)
+    0x080002e8   0x080002e8   0x0000014e   Code   RO         8500    .text               mf_w.l(dadd.o)
+    0x08000436   0x08000436   0x000000e4   Code   RO         8502    .text               mf_w.l(dmul.o)
+    0x0800051a   0x0800051a   0x000000de   Code   RO         8504    .text               mf_w.l(ddiv.o)
+    0x080005f8   0x080005f8   0x00000030   Code   RO         8506    .text               mf_w.l(dfixul.o)
+    0x08000628   0x08000628   0x00000030   Code   RO         8508    .text               mf_w.l(cdrcmple.o)
+    0x08000658   0x08000658   0x00000024   Code   RO         8510    .text               mc_w.l(init.o)
+    0x0800067c   0x0800067c   0x00000024   Code   RO         8513    .text               mc_w.l(llsshr.o)
+    0x080006a0   0x080006a0   0x000000ba   Code   RO         8516    .text               mf_w.l(depilogue.o)
+    0x0800075a   0x0800075a   0x00000056   Code   RO         8526    .text               mc_w.l(__dczerorl2.o)
     0x080007b0   0x080007b0   0x0000004c   Code   RO         2400    i.ADC_ConversionStop_Disable  stm32f1xx_hal_adc.o
     0x080007fc   0x080007fc   0x00000002   Code   RO          606    i.BusFault_Handler  stm32f1xx_it.o
     0x080007fe   0x080007fe   0x00000004   Code   RO          554    i.CDC_Control_FS    usbd_cdc_if.o
@@ -4653,10 +4666,10 @@ Memory Map of the image
     0x08000844   0x08000844   0x0000002c   Code   RO          558    i.CDC_Transmit_FS   usbd_cdc_if.o
     0x08000870   0x08000870   0x00000050   Code   RO          798    i.Callback_IPAssigned  ethernet_clp.o
     0x080008c0   0x080008c0   0x00000024   Code   RO          799    i.Callback_IPConflict  ethernet_clp.o
-    0x080008e4   0x080008e4   0x00000098   Code   RO         4773    i.DHCP_init         dhcp.o
-    0x0800097c   0x0800097c   0x00000124   Code   RO         4774    i.DHCP_run          dhcp.o
-    0x08000aa0   0x08000aa0   0x00000014   Code   RO         4694    i.DNS_init          dns.o
-    0x08000ab4   0x08000ab4   0x00000098   Code   RO         4695    i.DNS_run           dns.o
+    0x080008e4   0x080008e4   0x00000098   Code   RO         4784    i.DHCP_init         dhcp.o
+    0x0800097c   0x0800097c   0x00000124   Code   RO         4785    i.DHCP_run          dhcp.o
+    0x08000aa0   0x08000aa0   0x00000014   Code   RO         4705    i.DNS_init          dns.o
+    0x08000ab4   0x08000ab4   0x00000098   Code   RO         4706    i.DNS_run           dns.o
     0x08000b4c   0x08000b4c   0x00000002   Code   RO          607    i.DebugMon_Handler  stm32f1xx_it.o
     0x08000b4e   0x08000b4e   0x00000002   PAD
     0x08000b50   0x08000b50   0x00000060   Code   RO          800    i.Delay_debug       ethernet_clp.o
@@ -4729,7 +4742,7 @@ Memory Map of the image
     0x08002a88   0x08002a88   0x00000054   Code   RO          204    i.MX_USB_DEVICE_Init  usb_device.o
     0x08002adc   0x08002adc   0x00000002   Code   RO          609    i.MemManage_Handler  stm32f1xx_it.o
     0x08002ade   0x08002ade   0x00000002   Code   RO          610    i.NMI_Handler       stm32f1xx_it.o
-    0x08002ae0   0x08002ae0   0x00000010   Code   RO         4777    i.NibbleToHex       dhcp.o
+    0x08002ae0   0x08002ae0   0x00000010   Code   RO         4788    i.NibbleToHex       dhcp.o
     0x08002af0   0x08002af0   0x000002fc   Code   RO         1007    i.PCD_EP_ISR_Handler  stm32f1xx_hal_pcd.o
     0x08002dec   0x08002dec   0x00000002   Code   RO          611    i.PendSV_Handler    stm32f1xx_it.o
     0x08002dee   0x08002dee   0x0000005c   Code   RO         3151    i.SPI_EndRxTransaction  stm32f1xx_hal_spi.o
@@ -4835,63 +4848,63 @@ Memory Map of the image
     0x08004798   0x08004798   0x00000074   Code   RO         4516    i.WIZCHIP_READ_BUF  w5500.o
     0x0800480c   0x0800480c   0x00000060   Code   RO         4517    i.WIZCHIP_WRITE     w5500.o
     0x0800486c   0x0800486c   0x00000070   Code   RO         4518    i.WIZCHIP_WRITE_BUF  w5500.o
-    0x080048dc   0x080048dc   0x00000034   Code   RO         8411    i.__0vsnprintf      mc_w.l(printfa.o)
+    0x080048dc   0x080048dc   0x00000034   Code   RO         8422    i.__0vsnprintf      mc_w.l(printfa.o)
     0x08004910   0x08004910   0x00000020   Code   RO         1913    i.__NVIC_SetPriority  stm32f1xx_hal_cortex.o
-    0x08004930   0x08004930   0x0000000e   Code   RO         8509    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800493e   0x0800493e   0x00000002   Code   RO         8510    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08004940   0x08004940   0x0000000e   Code   RO         8511    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08004930   0x08004930   0x0000000e   Code   RO         8520    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800493e   0x0800493e   0x00000002   Code   RO         8521    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08004940   0x08004940   0x0000000e   Code   RO         8522    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x0800494e   0x0800494e   0x00000002   PAD
-    0x08004950   0x08004950   0x00000184   Code   RO         8413    i._fp_digits        mc_w.l(printfa.o)
-    0x08004ad4   0x08004ad4   0x000006b4   Code   RO         8414    i._printf_core      mc_w.l(printfa.o)
-    0x08005188   0x08005188   0x00000024   Code   RO         8415    i._printf_post_padding  mc_w.l(printfa.o)
-    0x080051ac   0x080051ac   0x0000002e   Code   RO         8416    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x080051da   0x080051da   0x00000016   Code   RO         8417    i._snputc           mc_w.l(printfa.o)
-    0x080051f0   0x080051f0   0x00000068   Code   RO         4778    i.check_DHCP_leasedIP  dhcp.o
-    0x08005258   0x08005258   0x00000070   Code   RO         4779    i.check_DHCP_timeout  dhcp.o
-    0x080052c8   0x080052c8   0x00000028   Code   RO         4697    i.check_DNS_timeout  dns.o
+    0x08004950   0x08004950   0x00000184   Code   RO         8424    i._fp_digits        mc_w.l(printfa.o)
+    0x08004ad4   0x08004ad4   0x000006b4   Code   RO         8425    i._printf_core      mc_w.l(printfa.o)
+    0x08005188   0x08005188   0x00000024   Code   RO         8426    i._printf_post_padding  mc_w.l(printfa.o)
+    0x080051ac   0x080051ac   0x0000002e   Code   RO         8427    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x080051da   0x080051da   0x00000016   Code   RO         8428    i._snputc           mc_w.l(printfa.o)
+    0x080051f0   0x080051f0   0x00000068   Code   RO         4789    i.check_DHCP_leasedIP  dhcp.o
+    0x08005258   0x08005258   0x00000070   Code   RO         4790    i.check_DHCP_timeout  dhcp.o
+    0x080052c8   0x080052c8   0x00000028   Code   RO         4708    i.check_DNS_timeout  dns.o
     0x080052f0   0x080052f0   0x00000314   Code   RO          760    i.client_request    ethernet_client.o
     0x08005604   0x08005604   0x00000074   Code   RO         4214    i.close             socket.o
     0x08005678   0x08005678   0x00000108   Code   RO         4215    i.connect           socket.o
     0x08005780   0x08005780   0x000000dc   Code   RO          806    i.consulta_DNS      ethernet_clp.o
     0x0800585c   0x0800585c   0x00000010   Code   RO          807    i.cs_desel          ethernet_clp.o
     0x0800586c   0x0800586c   0x00000010   Code   RO          808    i.cs_sel            ethernet_clp.o
-    0x0800587c   0x0800587c   0x00000030   Code   RO         4780    i.default_ip_assign  dhcp.o
-    0x080058ac   0x080058ac   0x00000024   Code   RO         4781    i.default_ip_conflict  dhcp.o
-    0x080058d0   0x080058d0   0x00000028   Code   RO         4782    i.default_ip_update  dhcp.o
+    0x0800587c   0x0800587c   0x00000030   Code   RO         4791    i.default_ip_assign  dhcp.o
+    0x080058ac   0x080058ac   0x00000024   Code   RO         4792    i.default_ip_conflict  dhcp.o
+    0x080058d0   0x080058d0   0x00000028   Code   RO         4793    i.default_ip_update  dhcp.o
     0x080058f8   0x080058f8   0x0000008c   Code   RO         4217    i.disconnect        socket.o
-    0x08005984   0x08005984   0x000000ae   Code   RO         4698    i.dns_answer        dns.o
+    0x08005984   0x08005984   0x000000ae   Code   RO         4709    i.dns_answer        dns.o
     0x08005a32   0x08005a32   0x00000002   PAD
-    0x08005a34   0x08005a34   0x000000b4   Code   RO         4699    i.dns_makequery     dns.o
-    0x08005ae8   0x08005ae8   0x0000001e   Code   RO         4700    i.dns_question      dns.o
-    0x08005b06   0x08005b06   0x0000000c   Code   RO         4701    i.get16             dns.o
+    0x08005a34   0x08005a34   0x000000b4   Code   RO         4710    i.dns_makequery     dns.o
+    0x08005ae8   0x08005ae8   0x0000001e   Code   RO         4711    i.dns_question      dns.o
+    0x08005b06   0x08005b06   0x0000000c   Code   RO         4712    i.get16             dns.o
     0x08005b12   0x08005b12   0x00000002   PAD
-    0x08005b14   0x08005b14   0x0000000c   Code   RO         4783    i.getDHCPLeasetime  dhcp.o
-    0x08005b20   0x08005b20   0x00000018   Code   RO         4784    i.getDNSfromDHCP    dhcp.o
-    0x08005b38   0x08005b38   0x00000018   Code   RO         4785    i.getGWfromDHCP     dhcp.o
-    0x08005b50   0x08005b50   0x00000018   Code   RO         4786    i.getIPfromDHCP     dhcp.o
-    0x08005b68   0x08005b68   0x00000018   Code   RO         4787    i.getSNfromDHCP     dhcp.o
+    0x08005b14   0x08005b14   0x0000000c   Code   RO         4794    i.getDHCPLeasetime  dhcp.o
+    0x08005b20   0x08005b20   0x00000018   Code   RO         4795    i.getDNSfromDHCP    dhcp.o
+    0x08005b38   0x08005b38   0x00000018   Code   RO         4796    i.getGWfromDHCP     dhcp.o
+    0x08005b50   0x08005b50   0x00000018   Code   RO         4797    i.getIPfromDHCP     dhcp.o
+    0x08005b68   0x08005b68   0x00000018   Code   RO         4798    i.getSNfromDHCP     dhcp.o
     0x08005b80   0x08005b80   0x0000004c   Code   RO         4519    i.getSn_RX_RSR      w5500.o
     0x08005bcc   0x08005bcc   0x0000004c   Code   RO         4520    i.getSn_TX_FSR      w5500.o
     0x08005c18   0x08005c18   0x00000180   Code   RO          809    i.init_ethernet_dinamico  ethernet_clp.o
     0x08005d98   0x08005d98   0x000000b0   Code   RO           18    i.main              main.o
-    0x08005e48   0x08005e48   0x000000d0   Code   RO         4788    i.makeDHCPMSG       dhcp.o
-    0x08005f18   0x08005f18   0x000001b8   Code   RO         4789    i.parseDHCPMSG      dhcp.o
-    0x080060d0   0x080060d0   0x000000d6   Code   RO         4702    i.parseDNSMSG       dns.o
+    0x08005e48   0x08005e48   0x000000d0   Code   RO         4799    i.makeDHCPMSG       dhcp.o
+    0x08005f18   0x08005f18   0x000001b8   Code   RO         4800    i.parseDHCPMSG      dhcp.o
+    0x080060d0   0x080060d0   0x000000d6   Code   RO         4713    i.parseDNSMSG       dns.o
     0x080061a6   0x080061a6   0x00000002   PAD
-    0x080061a8   0x080061a8   0x00000072   Code   RO         4703    i.parse_name        dns.o
-    0x0800621a   0x0800621a   0x0000000c   Code   RO         4704    i.put16             dns.o
+    0x080061a8   0x080061a8   0x00000072   Code   RO         4714    i.parse_name        dns.o
+    0x0800621a   0x0800621a   0x0000000c   Code   RO         4715    i.put16             dns.o
     0x08006226   0x08006226   0x00000002   PAD
     0x08006228   0x08006228   0x000000e4   Code   RO         4220    i.recv              socket.o
     0x0800630c   0x0800630c   0x00000214   Code   RO         4221    i.recvfrom          socket.o
-    0x08006520   0x08006520   0x00000030   Code   RO         4790    i.reg_dhcp_cbfunc   dhcp.o
+    0x08006520   0x08006520   0x00000030   Code   RO         4801    i.reg_dhcp_cbfunc   dhcp.o
     0x08006550   0x08006550   0x00000024   Code   RO         4300    i.reg_wizchip_cs_cbfunc  wizchip_conf.o
     0x08006574   0x08006574   0x0000002c   Code   RO         4301    i.reg_wizchip_spi_cbfunc  wizchip_conf.o
     0x080065a0   0x080065a0   0x0000002c   Code   RO         4302    i.reg_wizchip_spiburst_cbfunc  wizchip_conf.o
-    0x080065cc   0x080065cc   0x00000014   Code   RO         4791    i.reset_DHCP_timeout  dhcp.o
+    0x080065cc   0x080065cc   0x00000014   Code   RO         4802    i.reset_DHCP_timeout  dhcp.o
     0x080065e0   0x080065e0   0x0000011c   Code   RO         4222    i.send              socket.o
-    0x080066fc   0x080066fc   0x00000100   Code   RO         4792    i.send_DHCP_DECLINE  dhcp.o
-    0x080067fc   0x080067fc   0x000001d8   Code   RO         4793    i.send_DHCP_DISCOVER  dhcp.o
-    0x080069d4   0x080069d4   0x00000290   Code   RO         4794    i.send_DHCP_REQUEST  dhcp.o
+    0x080066fc   0x080066fc   0x00000100   Code   RO         4803    i.send_DHCP_DECLINE  dhcp.o
+    0x080067fc   0x080067fc   0x000001d8   Code   RO         4804    i.send_DHCP_DISCOVER  dhcp.o
+    0x080069d4   0x080069d4   0x00000290   Code   RO         4805    i.send_DHCP_REQUEST  dhcp.o
     0x08006c64   0x08006c64   0x00000180   Code   RO         4223    i.sendto            socket.o
     0x08006de4   0x08006de4   0x0000011c   Code   RO         4225    i.socket            socket.o
     0x08006f00   0x08006f00   0x0000001c   Code   RO          812    i.spi_rb            ethernet_clp.o
@@ -4920,7 +4933,7 @@ Memory Map of the image
     0x08007293   0x08007293   0x00000001   PAD
     0x08007294   0x08007294   0x00000049   Data   RO          821    .conststring        ethernet_clp.o
     0x080072dd   0x080072dd   0x00000003   PAD
-    0x080072e0   0x080072e0   0x00000020   Data   RO         8507    Region$$Table       anon$$obj.o
+    0x080072e0   0x080072e0   0x00000020   Data   RO         8518    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08007300, Size: 0x00002918, Max: 0x0000c000, ABSOLUTE, COMPRESSED[0x0000010c])
@@ -4946,8 +4959,8 @@ Memory Map of the image
     0x200001ac   COMPRESSED   0x0000000e   Data   RW         4227    .data               socket.o
     0x200001ba   COMPRESSED   0x00000002   PAD
     0x200001bc   COMPRESSED   0x00000034   Data   RW         4332    .data               wizchip_conf.o
-    0x200001f0   COMPRESSED   0x0000000c   Data   RW         4705    .data               dns.o
-    0x200001fc   COMPRESSED   0x0000004e   Data   RW         4795    .data               dhcp.o
+    0x200001f0   COMPRESSED   0x0000000c   Data   RW         4716    .data               dns.o
+    0x200001fc   COMPRESSED   0x0000004e   Data   RW         4806    .data               dhcp.o
     0x2000024a   COMPRESSED   0x00000002   PAD
     0x2000024c        -       0x0000011c   Zero   RW           19    .bss                main.o
     0x20000368        -       0x000002c4   Zero   RW          205    .bss                usb_device.o

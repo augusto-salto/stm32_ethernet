@@ -58,3 +58,4 @@ projeto_10\ethernet_ssl.o: ..\_library\Security\mbedtls\include\mbedtls\aes.h
 projeto_10\ethernet_ssl.o: ..\_library\Security\mbedtls\include\mbedtls\compat-1.3.h
 projeto_10\ethernet_ssl.o: ..\_library\Security\mbedtls\include\mbedtls\debug.h
 projeto_10\ethernet_ssl.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+projeto_10\ethernet_ssl.o: ..\_library\Stm32\uart_usb\uart_usb.h
