@@ -27,12 +27,32 @@ Project File Date:  05/29/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'stm32_ethernet'
-compiling dns.c...
-compiling ethernet_clp.c...
+compiling SSLInterface.c...
+..\_library\Security\SSLInterface.c(34): warning:  #940-D: missing return statement at end of non-void function "WIZnetSend" 
+  }
+..\_library\Security\SSLInterface.c(92): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+  	mbedtls_ssl_set_hostname(tlsContext->ssl, sslHostName);
+..\_library\Security\SSLInterface.c(95): warning:  #223-D: function "strlen" declared implicitly
+  	ret = mbedtls_x509_crt_parse((tlsContext->cacert),(unsigned char *)CERTIFICATE, strlen(CERTIFICATE));
+..\_library\Security\SSLInterface.c(54): warning:  #177-D: variable "error_buf"  was declared but never referenced
+  	char error_buf[100];
+..\_library\Security\SSLInterface.c(149): warning:  #223-D: function "memset" declared implicitly
+      memset(tempBuf,0,1024);
+..\_library\Security\SSLInterface.c(170): warning:  #223-D: function "mbedtls_strerror" declared implicitly
+              mbedtls_strerror( ret, (char *) tempBuf, DEBUG_BUFFER_SIZE );
+..\_library\Security\SSLInterface.c(173): warning:  #68-D: integer conversion resulted in a change of sign
+              return( -1 );
+..\_library\Security\SSLInterface.c(200): warning:  #223-D: function "memset" declared implicitly
+  	memset(tempBuf,0,1024);
+..\_library\Security\SSLInterface.c(208): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+  		mbedtls_x509_crt_verify_info( tempBuf, DEBUG_BUFFER_SIZE, "  ! ", flags );
+..\_library\Security\SSLInterface.c(229): warning:  #68-D: integer conversion resulted in a change of sign
+  	while( rc == MBEDTLS_ERR_SSL_WANT_WRITE );
+..\_library\Security\SSLInterface.c: 10 warnings, 0 errors
 linking...
-Program Size: Code=28750 RO-data=666 RW-data=588 ZI-data=9932  
+Program Size: Code=28774 RO-data=666 RW-data=588 ZI-data=9932  
 FromELF: creating hex file...
-"Projeto_10\Projeto_10.axf" - 0 Error(s), 0 Warning(s).
+"Projeto_10\Projeto_10.axf" - 0 Error(s), 10 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +76,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

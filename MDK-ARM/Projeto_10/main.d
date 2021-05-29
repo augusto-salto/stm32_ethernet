@@ -41,4 +41,5 @@ projeto_10\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 projeto_10\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 projeto_10\main.o: ..\_library\Stm32\uart_usb\uart_usb.h
 projeto_10\main.o: ..\_library\Stm32\ethernet_clp.h
+projeto_10\main.o: ..\_library\Stm32\ethernet_ssl.h
 projeto_10\main.o: ..\_library\Stm32\ethernet_client.h

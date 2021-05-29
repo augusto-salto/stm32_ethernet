@@ -5,6 +5,7 @@
 #include  "main.h"
 #include <stdio.h>
 #include <string.h>
+#include "ethernet_ssl.h"
 
 #define HTTP_PORT       1000
 #define RECV_BUFFER_LENGTH  2048

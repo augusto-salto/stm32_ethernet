@@ -34,6 +34,7 @@ projeto_10\ethernet_clp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uar
 projeto_10\ethernet_clp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
 projeto_10\ethernet_clp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
 projeto_10\ethernet_clp.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+projeto_10\ethernet_clp.o: ..\_library\Stm32\ethernet_ssl.h
 projeto_10\ethernet_clp.o: ..\_library\Ethernet\wizchip_conf.h
 projeto_10\ethernet_clp.o: ..\_library\Ethernet\W5500/w5500.h
 projeto_10\ethernet_clp.o: ..\_library\Ethernet\wizchip_conf.h

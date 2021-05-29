@@ -1,0 +1,10 @@
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\library\rsa_internal.c
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/config.h
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/check_config.h
+projeto_10\rsa_internal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/rsa.h
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/bignum.h
+projeto_10\rsa_internal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+projeto_10\rsa_internal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/md.h
+projeto_10\rsa_internal.o: ..\_library\Security\mbedtls\include\mbedtls/rsa_internal.h

@@ -2,6 +2,7 @@
 #define ethernet_clp
 
 #include "main.h"
+#include "ethernet_ssl.h"
 
 
 

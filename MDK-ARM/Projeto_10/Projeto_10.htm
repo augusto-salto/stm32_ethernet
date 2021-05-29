@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Projeto_10\Projeto_10.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Projeto_10\Projeto_10.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 29 16:13:41 2021
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat May 29 16:28:29 2021
 <BR><P>
 <H3>Maximum Stack Usage =        476 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -357,35 +357,51 @@ Global Symbols
 <P><STRONG><a name="[28]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f103xe.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xe.o(RESET)
 </UL>
-<P><STRONG><a name="[7a]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[76]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+</UL>
+
+<P><STRONG><a name="[77]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
 <P><STRONG><a name="[156]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[157]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[157]"></a>___aeabi_memcpy8$move</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
 
-<P><STRONG><a name="[d1]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_Init
+<P><STRONG><a name="[158]"></a>__aeabi_memcpy</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
+
+<P><STRONG><a name="[d1]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memcpy4
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_Init
 <LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_ethernet_dinamico
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;consulta_DNS
 </UL>
 
-<P><STRONG><a name="[158]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[159]"></a>__aeabi_memmove</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
 
-<P><STRONG><a name="[77]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<P><STRONG><a name="[15a]"></a>__aeabi_memmove4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
+
+<P><STRONG><a name="[15b]"></a>__aeabi_memmove8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, memmovea.o(.text), UNUSED)
+
+<P><STRONG><a name="[7a]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[159]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[15c]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[15a]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[15d]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[76]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[79]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
+<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseDNSMSG
 </UL>
@@ -394,10 +410,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[15b]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[15e]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[78]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
+<P><STRONG><a name="[7b]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
 <P><STRONG><a name="[13a]"></a>strncpy</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, strncpy.o(.text))
@@ -420,27 +436,28 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_makequery
 </UL>
 
-<P><STRONG><a name="[15c]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[15f]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[12a]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[79]"></a>__aeabi_uldivmod</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, uldiv.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
-</UL>
-<BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<P><STRONG><a name="[78]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[15d]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[160]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+
+<P><STRONG><a name="[161]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 48 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[7c]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lasr
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
@@ -468,8 +485,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[84]"></a>__aeabi_d2ulz</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, dfixul.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
@@ -484,22 +501,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[15e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
-
-<P><STRONG><a name="[7b]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
-</UL>
-
-<P><STRONG><a name="[15f]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[162]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[7d]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[160]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[163]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
 <P><STRONG><a name="[7f]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -508,17 +516,17 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7e]"></a>_double_epilogue</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, depilogue.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<BR><BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[161]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[164]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[162]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[165]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[86]"></a>ADC_ConversionStop_Disable</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, stm32f1xx_hal_adc.o(i.ADC_ConversionStop_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_ConversionStop_Disable
@@ -563,8 +571,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = DHCP_init &rArr; WIZCHIP_READ_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_DHCP_timeout
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ_BUF
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_DHCP_timeout
 </UL>
 <BR>[Called By]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_ethernet_dinamico
 </UL>
@@ -1640,9 +1648,6 @@ Global Symbols
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
 <LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_ignore
@@ -1651,6 +1656,9 @@ Global Symbols
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recvfrom
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getSn_RX_RSR
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
 </UL>
 
 <P><STRONG><a name="[90]"></a>WIZCHIP_READ_BUF</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, w5500.o(i.WIZCHIP_READ_BUF))
@@ -1658,9 +1666,9 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;socket
-<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 </UL>
 
 <P><STRONG><a name="[12b]"></a>WIZCHIP_WRITE</STRONG> (Thumb, 90 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_WRITE))
@@ -1673,15 +1681,15 @@ Global Symbols
 <LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disconnect
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;close
-<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
 <LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_ignore
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_recv_data
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recvfrom
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
 </UL>
 
 <P><STRONG><a name="[91]"></a>WIZCHIP_WRITE_BUF</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, w5500.o(i.WIZCHIP_WRITE_BUF))
@@ -1691,23 +1699,23 @@ Global Symbols
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_setnetinfo
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_init
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;connect
-<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_assign
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wizchip_sw_reset
 <LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wiz_send_data
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
+<LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_update
+<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_conflict
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_assign
 </UL>
 
 <P><STRONG><a name="[124]"></a>__0vsnprintf</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[163]"></a>__1vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
+<P><STRONG><a name="[166]"></a>__1vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
 
-<P><STRONG><a name="[164]"></a>__2vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
+<P><STRONG><a name="[167]"></a>__2vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
 
-<P><STRONG><a name="[165]"></a>__c89vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
+<P><STRONG><a name="[168]"></a>__c89vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf), UNUSED)
 
 <P><STRONG><a name="[100]"></a>vsnprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0vsnprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = vsnprintf
@@ -1715,19 +1723,19 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Printf
 </UL>
 
-<P><STRONG><a name="[166]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[169]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[167]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[16a]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[168]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[16b]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[99]"></a>check_DHCP_leasedIP</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, dhcp.o(i.check_DHCP_leasedIP))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = check_DHCP_leasedIP &rArr; send_DHCP_DECLINE &rArr; sendto &rArr; wiz_send_data &rArr; WIZCHIP_WRITE_BUF
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_DHCP_DECLINE
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;send_DHCP_DECLINE
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
 </UL>
@@ -1833,8 +1841,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE_BUF
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_READ
-<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_assign
 <LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WIZCHIP_WRITE
+<LI><a href="#[1b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;default_ip_assign
 </UL>
 <BR>[Address Reference Count : 2]<UL><LI> dhcp.o(i.reg_dhcp_cbfunc)
 <LI> dhcp.o(.data)
@@ -1861,11 +1869,11 @@ Global Symbols
 <P><STRONG><a name="[9c]"></a>dns_makequery</STRONG> (Thumb, 176 bytes, Stack size 112 bytes, dns.o(i.dns_makequery))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = dns_makequery &rArr; strncpy
 </UL>
-<BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;put16
+<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;put16
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strchr
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 </UL>
@@ -1910,8 +1918,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 <LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseDHCPMSG
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recvfrom
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseDHCPMSG
 </UL>
 
 <P><STRONG><a name="[13c]"></a>getSn_TX_FSR</STRONG> (Thumb, 76 bytes, Stack size 24 bytes, w5500.o(i.getSn_TX_FSR))
@@ -1988,10 +1996,10 @@ Global Symbols
 <P><STRONG><a name="[9f]"></a>parseDNSMSG</STRONG> (Thumb, 214 bytes, Stack size 24 bytes, dns.o(i.parseDNSMSG))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = parseDNSMSG &rArr; dns_answer &rArr; parse_name
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get16
+<BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get16
 <LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_question
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_answer
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DNS_run
 </UL>
@@ -2077,8 +2085,8 @@ Global Symbols
 <P><STRONG><a name="[12c]"></a>send_DHCP_DECLINE</STRONG> (Thumb, 250 bytes, Stack size 16 bytes, dhcp.o(i.send_DHCP_DECLINE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = send_DHCP_DECLINE &rArr; sendto &rArr; wiz_send_data &rArr; WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 </UL>
 <BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_leasedIP
 </UL>
@@ -2086,9 +2094,9 @@ Global Symbols
 <P><STRONG><a name="[97]"></a>send_DHCP_DISCOVER</STRONG> (Thumb, 466 bytes, Stack size 32 bytes, dhcp.o(i.send_DHCP_DISCOVER))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = send_DHCP_DISCOVER &rArr; sendto &rArr; wiz_send_data &rArr; WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NibbleToHex
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_timeout
@@ -2097,9 +2105,9 @@ Global Symbols
 <P><STRONG><a name="[98]"></a>send_DHCP_REQUEST</STRONG> (Thumb, 650 bytes, Stack size 48 bytes, dhcp.o(i.send_DHCP_REQUEST))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = send_DHCP_REQUEST &rArr; sendto &rArr; wiz_send_data &rArr; WIZCHIP_WRITE_BUF
 </UL>
-<BR>[Calls]<UL><LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;makeDHCPMSG
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NibbleToHex
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sendto
 </UL>
 <BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DHCP_run
 <LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;check_DHCP_timeout
@@ -2454,22 +2462,22 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> usbd_cdc.o(.data)
 </UL>
 <P><STRONG><a name="[126]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[125]"></a>_printf_core</STRONG> (Thumb, 1704 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 <LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 <BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0vsnprintf
 </UL>
