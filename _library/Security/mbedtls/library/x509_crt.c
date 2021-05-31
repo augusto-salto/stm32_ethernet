@@ -30,21 +30,21 @@
  */
 
 #if !defined(MBEDTLS_CONFIG_FILE)
-#include "mbedtls/config.h"
+#include "config.h"
 #else
 #include MBEDTLS_CONFIG_FILE
 #endif
 
 #if defined(MBEDTLS_X509_CRT_PARSE_C)
 
-#include "mbedtls/x509_crt.h"
-#include "mbedtls/oid.h"
+#include "x509_crt.h"
+#include "oid.h"
 
 #include <stdio.h>
 #include <string.h>
 
 #if defined(MBEDTLS_PEM_PARSE_C)
-#include "mbedtls/pem.h"
+#include "pem.h"
 #endif
 
 #if defined(MBEDTLS_PLATFORM_C)
@@ -2341,7 +2341,9 @@ exit:
  */
 void mbedtls_x509_crt_init( mbedtls_x509_crt *crt )
 {
+	
     memset( crt, 0, sizeof(mbedtls_x509_crt) );
+	
 }
 
 /*

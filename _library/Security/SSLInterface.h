@@ -6,8 +6,8 @@
  * data: 2015.11.26
  */
 
-#ifndef _SSLINTERFACE_H_
-#define _SSLINTERFACE_H_
+#ifndef SSLInterface
+#define SSLInterface
 
 #if !defined(MBEDTLS_CONFIG_FILE)
 #include "mbedtls/config.h"

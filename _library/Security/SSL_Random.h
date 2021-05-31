@@ -7,8 +7,8 @@
  */
 
 
-#ifndef __SSL_RANDOM_H_
-#define __SSL_RANDOM_H_
+#ifndef SSL_Random
+#define SSL_Random
 
 #include <stdlib.h>
 

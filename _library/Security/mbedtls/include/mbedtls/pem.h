@@ -21,8 +21,8 @@
  *
  *  This file is part of mbed TLS (https://tls.mbed.org)
  */
-#ifndef MBEDTLS_PEM_H
-#define MBEDTLS_PEM_H
+#ifndef pem
+#define pem
 
 #include <stddef.h>
 

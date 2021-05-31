@@ -1,4 +1,7 @@
 /*Certificate*/
+#ifndef certificate
+#define certificate
+
 
 const char	self_signed_certificate[] =	\
 "-----BEGIN CERTIFICATE-----\r\n"	\
@@ -21,4 +24,6 @@ const char	self_signed_certificate[] =	\
 "6jEJfMmbR1yZSJo+tcGpvdjjSHzPUUmCkZ32AOWgET+3B7QF5rw6j0aTza8EtRap\r\n"	\
 "cyc1Lqe2S7EfK9fb25Y=\r\n"	\
 "-----END CERTIFICATE-----\r\n";
+
+#endif
 

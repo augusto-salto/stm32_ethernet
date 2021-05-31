@@ -21,8 +21,8 @@
  *
  *  This file is part of mbed TLS (https://tls.mbed.org)
  */
-#ifndef MBEDTLS_X509_CRL_H
-#define MBEDTLS_X509_CRL_H
+#ifndef x509_crt
+#define x509_crt
 
 #if !defined(MBEDTLS_CONFIG_FILE)
 #include "config.h"

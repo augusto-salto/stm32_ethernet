@@ -21,8 +21,8 @@
  *
  *  This file is part of mbed TLS (https://tls.mbed.org)
  */
-#ifndef MBEDTLS_DEBUG_H
-#define MBEDTLS_DEBUG_H
+#ifndef debug
+#define debug
 
 #if !defined(MBEDTLS_CONFIG_FILE)
 #include "config.h"

@@ -1,5 +1,5 @@
-#ifndef MBEDTLS_CONFIG_H
-#define MBEDTLS_CONFIG_H
+#ifndef mbedtls/config
+#define mbedtls/config
 
 /************************ macro define ***********************************/
 #define MBEDTLS_SSL_CLI_C   //complie SSL cleint protocols

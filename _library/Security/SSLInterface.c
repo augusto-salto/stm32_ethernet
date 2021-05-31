@@ -11,13 +11,17 @@
 #include "socket.h"
 #include "certificate.h"
 #include "debug.h"
-#include <stdio.h>
+#include "stdio.h"
+#include "string.h"
+#include "error.h"
+#include "uart_usb.h"
 
 #define CERTIFICATE	self_signed_certificate
 
-unsigned char sslHostName[] = "test.wiznet.ssl";
+static const char sslHostName[] = "test.wiznet.ssl";
 
-unsigned char tempBuf[DEBUG_BUFFER_SIZE] = {0,};
+
+static char tempBuf[DEBUG_BUFFER_SIZE] = {0,};
 
 //todo Add udp functions, ex) sendto recvfrom
 
@@ -40,7 +44,7 @@ void WIZnetDebugCB(void *ctx, int level, const char *file, int line, const char 
 {
     if(level <= DEBUG_LEVEL)
     {
-       printf("%s\r\n",str);
+       UART_Printf("%s\r\n",str);
     }
 }
 #endif
@@ -50,6 +54,7 @@ void WIZnetDebugCB(void *ctx, int level, const char *file, int line, const char 
 unsigned int wiz_tls_init(wiz_tls_context* tlsContext, int* socket_fd)
 {
 	int ret = 1;
+	UART_Printf("debug1");
 #if defined (MBEDTLS_ERROR_C)
 	char error_buf[100];
 #endif
@@ -65,16 +70,20 @@ unsigned int wiz_tls_init(wiz_tls_context* tlsContext, int* socket_fd)
 	tlsContext->entropy = malloc(sizeof(mbedtls_entropy_context));
 	mbedtls_entropy_init( tlsContext->entropy);
 #endif
-
+UART_Printf("debug2");
 	tlsContext->ctr_drbg = malloc(sizeof(mbedtls_ctr_drbg_context));
 	tlsContext->ssl = malloc(sizeof(mbedtls_ssl_context));
 	tlsContext->conf = malloc(sizeof(mbedtls_ssl_config));
 	tlsContext->cacert = malloc(sizeof(mbedtls_x509_crt));
-
+UART_Printf("debug3");
 	mbedtls_ctr_drbg_init(tlsContext->ctr_drbg);
+	UART_Printf("debug3.1");
 	mbedtls_x509_crt_init(tlsContext->cacert);
+	UART_Printf("debug3.2");
 	mbedtls_ssl_init(tlsContext->ssl);
+	UART_Printf("debug3.3");
 	mbedtls_ssl_config_init(tlsContext->conf);
+	
 	/*
 		Initialize certificates
 	*/
@@ -82,7 +91,7 @@ unsigned int wiz_tls_init(wiz_tls_context* tlsContext, int* socket_fd)
 #if defined (MBEDTLS_X509_CRT_PARSE_C)
 
 #if defined (MBEDTLS_DEBUG_C)
-	printf(" Loading the CA root certificate \r\n");
+	UART_Printf(" Loading the CA root certificate \r\n");
 #endif
 	mbedtls_ssl_config_defaults((tlsContext->conf),
 								MBEDTLS_SSL_IS_CLIENT,
@@ -96,14 +105,15 @@ unsigned int wiz_tls_init(wiz_tls_context* tlsContext, int* socket_fd)
 #else
 	ret = 1;
 #if defined (MBEDTLS_DEBUG_C)
-	printf("SSL_CERTS_C not define .\r\n");
+	UART_Printf("SSL_CERTS_C not define .\r\n");
 #endif
 #endif
 #endif
 	if(ret < 0)
 	{
+		UART_Printf("debug4");
 #if defined (MBEDTLS_CERTS_C)
-		printf("x509_crt_parse failed.%x \r\n",ret);
+		UART_Printf("x509_crt_parse failed.%x \r\n",ret);
 #endif
 		//return 0;
 	}
@@ -159,7 +169,7 @@ unsigned int wiz_tls_connect(wiz_tls_context* tlsContext, unsigned short port, u
 		return ret;
 
 #if defined(MBEDTLS_DEBUG_C)
-    printf( "  . Performing the SSL/TLS handshake..." );
+    UART_Printf( "  . Performing the SSL/TLS handshake..." );
 #endif
 
     while( ( ret = mbedtls_ssl_handshake( tlsContext->ssl ) ) != 0 )
@@ -168,14 +178,14 @@ unsigned int wiz_tls_connect(wiz_tls_context* tlsContext, unsigned short port, u
         {
 #if defined(MBEDTLS_ERROR_C)
             mbedtls_strerror( ret, (char *) tempBuf, DEBUG_BUFFER_SIZE );
-            printf( " failed\n\r  ! mbedtls_ssl_handshake returned %d: %s\n\r", ret, tempBuf );
+            UART_Printf( " failed\n\r  ! mbedtls_ssl_handshake returned %d: %s\n\r", ret, tempBuf );
 #endif
             return( -1 );
         }
     }
 
 #if defined(MBEDTLS_DEBUG_C)
-    printf( "ok\n\r    [ Ciphersuite is %s ]\n\r",
+    UART_Printf( "ok\n\r    [ Ciphersuite is %s ]\n\r",
             mbedtls_ssl_get_ciphersuite( tlsContext->ssl ) );
 #endif
 
@@ -200,22 +210,22 @@ unsigned int wiz_tls_x509_verify(wiz_tls_context* tlsContext)
 	memset(tempBuf,0,1024);
 
 #if defined(MBEDTLS_DEBUG_C)
-	printf( "Verifying peer X.509 certificate..." );
+	UART_Printf( "Verifying peer X.509 certificate..." );
 #endif
 	/* In real life, we probably want to bail out when ret != 0 */
 	if( ( flags = mbedtls_ssl_get_verify_result( tlsContext->ssl ) ) != 0 )
 	{
 		mbedtls_x509_crt_verify_info( tempBuf, DEBUG_BUFFER_SIZE, "  ! ", flags );
 #if defined(MBEDTLS_DEBUG_C)
-		printf( "failed.\n\r" );
-		printf( "%s\n\r", tempBuf );
+		UART_Printf( "failed.\n\r" );
+		UART_Printf( "%s\n\r", tempBuf );
 #endif
 		return flags;
 	}
 	else
 	{
 #if defined(MBEDTLS_DEBUG_C)
-		printf( "ok\n\r" );
+		UART_Printf( "ok\n\r" );
 #endif
 		return 0;
 	}
