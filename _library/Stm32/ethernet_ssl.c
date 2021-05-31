@@ -13,7 +13,7 @@
 
 unsigned char gServer_IP[4] = {192,168,128,244};
 int len, rc, server_fd = 0;
-unsigned char ethBuf077[ETH_MAX_BUF_SIZE];
+unsigned char request_ssl[ETH_MAX_BUF_SIZE];
 
 void init_ssl(){
 
@@ -27,21 +27,21 @@ void init_ssl(){
 	
 	
 	/* Read data from SSL channel  */
-		len = wiz_tls_read(&tlsContext, ethBuf077, ETH_MAX_BUF_SIZE);
+		len = wiz_tls_read(&tlsContext, request_ssl, ETH_MAX_BUF_SIZE);				// LE UMA POSSIVEL RESPOSTA DO SERVIDOR
 	
 	
-	if(len > 0)
+	if(len > 0)																															// QUANDO TERMINAR DE LER, COMECA A ENVIAR
 		{
-			UART_Printf("%s : %d \r\n",ethBuf077, len);
+			UART_Printf("%s : %d \r\n",request_ssl, len);
 			/*  Write data to the SSL channel  */
-			wiz_tls_write(&tlsContext, ethBuf077, len);
+			wiz_tls_write(&tlsContext, request_ssl, len);
 		}
 	
-if(wiz_tls_close_notify(&tlsContext) == 0)
+if(wiz_tls_close_notify(&tlsContext) == 0)																// 
 		UART_Printf("SSL closed\r\n");
 
 	/*  Free tls context  */
-	wiz_tls_deinit(&tlsContext);
+	wiz_tls_deinit(&tlsContext);																						
 
 }
 
