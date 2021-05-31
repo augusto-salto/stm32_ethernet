@@ -18,12 +18,12 @@ unsigned char ethBuf077[ETH_MAX_BUF_SIZE];
 void init_ssl(){
 
 
-	wiz_tls_context tlsContext;
+	wiz_tls_context tlsContext;																							// CRIA VARIAVEL CONTEXTO
 	
-	wiz_tls_init(&tlsContext,&server_fd);
+	wiz_tls_init(&tlsContext,&server_fd);																		// INICIA O CONTEXTO PASSANDO O NUMERO DO SOQUETE
 	
 	
-	wiz_tls_connect(&tlsContext, SERVER_PORT, gServer_IP);
+	wiz_tls_connect(&tlsContext, SERVER_PORT, gServer_IP);									// CONECTA AO SERVIDOR
 	
 	
 	/* Read data from SSL channel  */
