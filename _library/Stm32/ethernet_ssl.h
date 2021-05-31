@@ -4,7 +4,7 @@
 
 
 
-
+void init_ssl(void);
 
 
 #endif

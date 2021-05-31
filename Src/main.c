@@ -23,6 +23,7 @@
 #include "uart_usb.h"
 #include	"ethernet_clp.h"
 #include  "ethernet_client.h"
+#include  "ethernet_ssl.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -108,13 +109,14 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
   MX_USART3_UART_Init();
-	init_ethernet_dinamico();
-	//init_ethernet_estatico(ip, getway);
+												init_ethernet_dinamico();
+												//init_ethernet_estatico(ip, getway);
 	
 	
   /* USER CODE BEGIN 2 */
 consulta_DNS();
-client_request(request);
+init_ssl();
+														////client_request(request);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,12 +125,9 @@ client_request(request);
   {
     /* USER CODE END WHILE */
 			HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_12);
-		HAL_Delay(500);
+		HAL_Delay(1000);
 								////////////////////////     TCPLoopServer(); //  ----------------> MODO SERVIDOR TCP!
-		
-		
-		
-		HAL_Delay(2500);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

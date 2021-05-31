@@ -11,18 +11,20 @@
 #define SOCK_SMTP			0
 
 
-unsigned char gServer_IP[4] = {192,168,128,244};
+unsigned char gServer_IP[4] = {35,201,97,85};													//35.201.97.85
 int len, rc, server_fd = 0;
 unsigned char request_ssl[ETH_MAX_BUF_SIZE];
+int retorno = 0;
+
 
 void init_ssl(){
 
-
+	
 	wiz_tls_context tlsContext;																							// CRIA VARIAVEL CONTEXTO
 	
-	wiz_tls_init(&tlsContext,&server_fd);																		// INICIA O CONTEXTO PASSANDO O NUMERO DO SOQUETE
+	retorno = wiz_tls_init(&tlsContext,&server_fd);																		// INICIA O CONTEXTO PASSANDO O NUMERO DO SOQUETE
 	
-	
+	UART_Printf("cheguei aqui! retorno = %d", retorno);
 	wiz_tls_connect(&tlsContext, SERVER_PORT, gServer_IP);									// CONECTA AO SERVIDOR
 	
 	
