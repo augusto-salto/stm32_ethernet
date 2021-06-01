@@ -26,6 +26,7 @@ Project File Date:  05/29/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+<<<<<<< HEAD
 Rebuild target 'stm32_ethernet'
 assembling startup_stm32f103xe.s...
 compiling stm32f1xx_hal_rcc_ex.c...
@@ -170,6 +171,218 @@ linking...
 Program Size: Code=28774 RO-data=666 RW-data=588 ZI-data=9932  
 FromELF: creating hex file...
 "Projeto_10\Projeto_10.axf" - 0 Error(s), 10 Warning(s).
+=======
+Build target 'stm32_ethernet'
+compiling x509.c...
+..\_library\Security\mbedtls\include\mbedtls/config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\library\x509.c(362): error:  #40: expected an identifier
+      mbedtls_x509_buf *oid;
+..\_library\Security\mbedtls\library\x509.c(373): error:  #29: expected an expression
+      oid = &cur->oid;
+..\_library\Security\mbedtls\library\x509.c(374): error:  #29: expected an expression
+      oid->tag = **p;
+..\_library\Security\mbedtls\library\x509.c(376): error:  #29: expected an expression
+      if( ( ret = mbedtls_asn1_get_tag( p, end, &oid->len, MBEDTLS_ASN1_OID ) ) != 0 )
+..\_library\Security\mbedtls\library\x509.c(379): error:  #29: expected an expression
+      oid->p = *p;
+..\_library\Security\mbedtls\library\x509.c(380): error:  #29: expected an expression
+      *p += oid->len;
+..\_library\Security\mbedtls\library\x509.c(765): error:  #134: expected a field name
+          if( !name->oid.p )
+..\_library\Security\mbedtls\library\x509.c(777): error:  #134: expected a field name
+          ret = mbedtls_oid_get_attr_short_name( &name->oid, &short_name );
+..\_library\Security\mbedtls\library\x509.c: 2 warnings, 8 errors
+compiling oid.c...
+..\_library\Security\mbedtls\include\mbedtls\config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls\config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls\asn1.h(168): error:  #3093: anonymous structs are only supported in --gnu mode, or when enabled with #pragma anon_unions
+      mbedtls_asn1_buf oid;                   /**< The object identifier. */
+..\_library\Security\mbedtls\library\oid.c(248): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_TYPED_FROM_ASN1(oid_x520_attr_t, x520_attr, oid_x520_attr_type)
+..\_library\Security\mbedtls\library\oid.c(248): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_x520_attr_t, x520_attr, oid_x520_attr_type)
+..\_library\Security\mbedtls\library\oid.c(248): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_x520_attr_t, x520_attr, oid_x520_attr_type)
+..\_library\Security\mbedtls\library\oid.c(249): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_ATTR1(mbedtls_oid_get_attr_short_name, oid_x520_attr_t, x520_attr, const char *, short_name)
+..\_library\Security\mbedtls\library\oid.c(249): error:  #165: too few arguments in function call
+  FN_OID_GET_ATTR1(mbedtls_oid_get_attr_short_name, oid_x520_attr_t, x520_attr, const char *, short_name)
+..\_library\Security\mbedtls\library\oid.c(287): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_TYPED_FROM_ASN1(oid_x509_ext_t, x509_ext, oid_x509_ext)
+..\_library\Security\mbedtls\library\oid.c(287): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_x509_ext_t, x509_ext, oid_x509_ext)
+..\_library\Security\mbedtls\library\oid.c(287): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_x509_ext_t, x509_ext, oid_x509_ext)
+..\_library\Security\mbedtls\library\oid.c(288): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_ATTR1(mbedtls_oid_get_x509_ext_type, oid_x509_ext_t, x509_ext, int, ext_type)
+..\_library\Security\mbedtls\library\oid.c(288): error:  #165: too few arguments in function call
+  FN_OID_GET_ATTR1(mbedtls_oid_get_x509_ext_type, oid_x509_ext_t, x509_ext, int, ext_type)
+..\_library\Security\mbedtls\library\oid.c(301): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_TYPED_FROM_ASN1(mbedtls_oid_descriptor_t, ext_key_usage, oid_ext_key_usage)
+..\_library\Security\mbedtls\library\oid.c(301): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(mbedtls_oid_descriptor_t, ext_key_usage, oid_ext_key_usage)
+..\_library\Security\mbedtls\library\oid.c(301): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(mbedtls_oid_descriptor_t, ext_key_usage, oid_ext_key_usage)
+..\_library\Security\mbedtls\library\oid.c(302): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_ATTR1(mbedtls_oid_get_extended_key_usage, mbedtls_oid_descriptor_t, ext_key_usage, const char *, description)
+..\_library\Security\mbedtls\library\oid.c(302): error:  #165: too few arguments in function call
+  FN_OID_GET_ATTR1(mbedtls_oid_get_extended_key_usage, mbedtls_oid_descriptor_t, ext_key_usage, const char *, description)
+..\_library\Security\mbedtls\library\oid.c(409): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_TYPED_FROM_ASN1(oid_sig_alg_t, sig_alg, oid_sig_alg)
+..\_library\Security\mbedtls\library\oid.c(409): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_sig_alg_t, sig_alg, oid_sig_alg)
+..\_library\Security\mbedtls\library\oid.c(409): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_sig_alg_t, sig_alg, oid_sig_alg)
+..\_library\Security\mbedtls\library\oid.c(410): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_DESCRIPTOR_ATTR1(mbedtls_oid_get_sig_alg_desc, oid_sig_alg_t, sig_alg, const char *, description)
+..\_library\Security\mbedtls\library\oid.c(410): error:  #165: too few arguments in function call
+  FN_OID_GET_DESCRIPTOR_ATTR1(mbedtls_oid_get_sig_alg_desc, oid_sig_alg_t, sig_alg, const char *, description)
+..\_library\Security\mbedtls\library\oid.c(411): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_ATTR2(mbedtls_oid_get_sig_alg, oid_sig_alg_t, sig_alg, mbedtls_md_type_t, md_alg, mbedtls_pk_type_t, pk_alg)
+..\_library\Security\mbedtls\library\oid.c(411): error:  #165: too few arguments in function call
+  FN_OID_GET_ATTR2(mbedtls_oid_get_sig_alg, oid_sig_alg_t, sig_alg, mbedtls_md_type_t, md_alg, mbedtls_pk_type_t, pk_alg)
+..\_library\Security\mbedtls\library\oid.c(412): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_OID_BY_ATTR2(mbedtls_oid_get_oid_by_sig_alg, oid_sig_alg_t, oid_sig_alg, mbedtls_pk_type_t, pk_alg, mbedtls_md_type_t, md_alg)
+..\_library\Security\mbedtls\library\oid.c(412): error:  #29: expected an expression
+  FN_OID_GET_OID_BY_ATTR2(mbedtls_oid_get_oid_by_sig_alg, oid_sig_alg_t, oid_sig_alg, mbedtls_pk_type_t, pk_alg, mbedtls_md_type_t, md_alg)
+..\_library\Security\mbedtls\library\oid.c(443): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_TYPED_FROM_ASN1(oid_pk_alg_t, pk_alg, oid_pk_alg)
+..\_library\Security\mbedtls\library\oid.c(443): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_pk_alg_t, pk_alg, oid_pk_alg)
+..\_library\Security\mbedtls\library\oid.c(443): error:  #29: expected an expression
+  FN_OID_TYPED_FROM_ASN1(oid_pk_alg_t, pk_alg, oid_pk_alg)
+..\_library\Security\mbedtls\library\oid.c(444): error:  #141-D: unnamed prototyped parameters not allowed when body is present
+  FN_OID_GET_ATTR1(mbedtls_oid_get_pk_alg, oid_pk_alg_t, pk_alg, mbedtls_pk_type_t, pk_alg)
+..\_library\Security\mbedtls\library\oid.c(444): error:  #165: too few arguments in function call
+  FN_OID_GET_ATTR1(mbedtls_oid_get_pk_alg, oid_pk_alg_t, pk_alg, mbedtls_pk_type_t, pk_alg)
+..\_library\Security\mbedtls\library\oid.c: 2 warnings, 30 errors
+compiling pkparse.c...
+..\_library\Security\mbedtls\include\mbedtls/config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\library\pkparse.c(1155): warning:  #64-D: declaration does not declare anything
+      mbedtls_pem_context pem;
+..\_library\Security\mbedtls\library\pkparse.c(1157): error:  #29: expected an expression
+      mbedtls_pem_init( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1164): error:  #29: expected an expression
+          ret = mbedtls_pem_read_buffer( &pem,
+..\_library\Security\mbedtls\library\pkparse.c(1174): error:  #29: expected an expression
+                                              pem.buf, pem.buflen ) ) != 0 )
+..\_library\Security\mbedtls\library\pkparse.c(1174): error:  #29: expected an expression
+                                              pem.buf, pem.buflen ) ) != 0 )
+..\_library\Security\mbedtls\library\pkparse.c(1179): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1225): error:  #29: expected an expression
+          ret = mbedtls_pem_read_buffer( &pem,
+..\_library\Security\mbedtls\library\pkparse.c(1232): error:  #29: expected an expression
+                                                  pem.buf, pem.buflen ) ) != 0 )
+..\_library\Security\mbedtls\library\pkparse.c(1232): error:  #29: expected an expression
+                                                  pem.buf, pem.buflen ) ) != 0 )
+..\_library\Security\mbedtls\library\pkparse.c(1237): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1363): warning:  #64-D: declaration does not declare anything
+      mbedtls_pem_context pem;
+..\_library\Security\mbedtls\library\pkparse.c(1365): error:  #29: expected an expression
+      mbedtls_pem_init( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1371): error:  #29: expected an expression
+          ret = mbedtls_pem_read_buffer( &pem,
+..\_library\Security\mbedtls\library\pkparse.c(1378): error:  #29: expected an expression
+          p = pem.buf;
+..\_library\Security\mbedtls\library\pkparse.c(1385): error:  #29: expected an expression
+          if ( ( ret = pk_get_rsapubkey( &p, p + pem.buflen, mbedtls_pk_rsa( *ctx ) ) ) != 0 )
+..\_library\Security\mbedtls\library\pkparse.c(1388): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1393): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1402): error:  #29: expected an expression
+          ret = mbedtls_pem_read_buffer( &pem,
+..\_library\Security\mbedtls\library\pkparse.c(1412): error:  #29: expected an expression
+          p = pem.buf;
+..\_library\Security\mbedtls\library\pkparse.c(1414): error:  #29: expected an expression
+          ret = mbedtls_pk_parse_subpubkey( &p,  p + pem.buflen, ctx );
+..\_library\Security\mbedtls\library\pkparse.c(1415): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1420): error:  #29: expected an expression
+          mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c(1423): error:  #29: expected an expression
+      mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\pkparse.c: 4 warnings, 21 errors
+compiling rsa.c...
+..\_library\Security\mbedtls\include\mbedtls/config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/asn1.h(168): error:  #3093: anonymous structs are only supported in --gnu mode, or when enabled with #pragma anon_unions
+      mbedtls_asn1_buf oid;                   /**< The object identifier. */
+..\_library\Security\mbedtls\library\rsa.c(1632): error:  #40: expected an identifier
+      const char *oid  = NULL;
+..\_library\Security\mbedtls\library\rsa.c(1641): error:  #29: expected an expression
+          if( mbedtls_oid_get_oid_by_md( md_alg, &oid, &oid_size ) != 0 )
+..\_library\Security\mbedtls\library\rsa.c(1715): error:  #29: expected an expression
+      memcpy( p, oid, oid_size );
+..\_library\Security\mbedtls\library\rsa.c: 2 warnings, 4 errors
+compiling x509_crt.c...
+..\_library\Security\mbedtls\include\mbedtls\config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls\config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\library\x509_crt.c(1010): warning:  #64-D: declaration does not declare anything
+          mbedtls_pem_context pem;
+..\_library\Security\mbedtls\library\x509_crt.c(1016): error:  #29: expected an expression
+              mbedtls_pem_init( &pem );
+..\_library\Security\mbedtls\library\x509_crt.c(1019): error:  #29: expected an expression
+              ret = mbedtls_pem_read_buffer( &pem,
+..\_library\Security\mbedtls\library\x509_crt.c(1038): error:  #29: expected an expression
+                  mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\x509_crt.c(1055): error:  #29: expected an expression
+              ret = mbedtls_x509_crt_parse_der( chain, pem.buf, pem.buflen );
+..\_library\Security\mbedtls\library\x509_crt.c(1055): error:  #29: expected an expression
+              ret = mbedtls_x509_crt_parse_der( chain, pem.buf, pem.buflen );
+..\_library\Security\mbedtls\library\x509_crt.c(1057): error:  #29: expected an expression
+              mbedtls_pem_free( &pem );
+..\_library\Security\mbedtls\library\x509_crt.c(1835): error:  #134: expected a field name
+          if( a->oid.tag != b->oid.tag ||
+..\_library\Security\mbedtls\library\x509_crt.c(1835): error:  #134: expected a field name
+          if( a->oid.tag != b->oid.tag ||
+..\_library\Security\mbedtls\library\x509_crt.c(1836): error:  #134: expected a field name
+              a->oid.len != b->oid.len ||
+..\_library\Security\mbedtls\library\x509_crt.c(1836): error:  #134: expected a field name
+              a->oid.len != b->oid.len ||
+..\_library\Security\mbedtls\library\x509_crt.c(1837): error:  #134: expected a field name
+              memcmp( a->oid.p, b->oid.p, b->oid.len ) != 0 )
+..\_library\Security\mbedtls\library\x509_crt.c(1837): error:  #134: expected a field name
+              memcmp( a->oid.p, b->oid.p, b->oid.len ) != 0 )
+..\_library\Security\mbedtls\library\x509_crt.c(1837): error:  #134: expected a field name
+              memcmp( a->oid.p, b->oid.p, b->oid.len ) != 0 )
+..\_library\Security\mbedtls\library\x509_crt.c(2253): error:  #134: expected a field name
+                  if( MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0 )
+..\_library\Security\mbedtls\library\x509_crt.c(2253): error:  #134: expected a field name
+                  if( MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0 )
+..\_library\Security\mbedtls\library\x509_crt.c(2253): error:  #134: expected a field name
+                  if( MBEDTLS_OID_CMP( MBEDTLS_OID_AT_CN, &name->oid ) == 0 )
+..\_library\Security\mbedtls\library\x509_crt.c: 3 warnings, 16 errors
+compiling error.c...
+..\_library\Security\mbedtls\include\mbedtls/config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/asn1.h(168): error:  #3093: anonymous structs are only supported in --gnu mode, or when enabled with #pragma anon_unions
+      mbedtls_asn1_buf oid;                   /**< The object identifier. */
+..\_library\Security\mbedtls\library\error.c: 2 warnings, 1 error
+compiling pem.c...
+..\_library\Security\mbedtls\include\mbedtls/config.h(1): warning:  #14-D: extra text after expected end of preprocessing directive
+  #ifndef mbedtls/config
+..\_library\Security\mbedtls\include\mbedtls/config.h(2): warning:  #2775-D: white space is required between the macro name "mbedtls" and its replacement text
+  #define mbedtls/config
+..\_library\Security\mbedtls\library\pem.c: 2 warnings, 0 errors
+"Projeto_10\Projeto_10.axf" - 80 Error(s), 18 Warning(s).
+>>>>>>> parent of 9bcba09 (no message)
 
 <h2>Software Packages used:</h2>
 
