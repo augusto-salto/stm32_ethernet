@@ -1,9 +1,2 @@
 projeto_10\ctr_drbg.o: ..\_library\Security\mbedtls\library\ctr_drbg.c
 projeto_10\ctr_drbg.o: ..\_library\Security\mbedtls\include\mbedtls/config.h
-projeto_10\ctr_drbg.o: ..\_library\Security\mbedtls\include\mbedtls/check_config.h
-projeto_10\ctr_drbg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-projeto_10\ctr_drbg.o: ..\_library\Security\mbedtls\include\mbedtls/ctr_drbg.h
-projeto_10\ctr_drbg.o: ..\_library\Security\mbedtls\include\mbedtls/aes.h
-projeto_10\ctr_drbg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-projeto_10\ctr_drbg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-projeto_10\ctr_drbg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

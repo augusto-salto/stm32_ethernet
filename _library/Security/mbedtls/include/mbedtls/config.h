@@ -1,6 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #ifndef MBEDTLS_CONFIG_H
 #define MBEDTLS_CONFIG_H
+=======
+#ifndef mbedtls/config
+#define mbedtls/config
+>>>>>>> parent of 9bcba09 (no message)
 =======
 #ifndef mbedtls/config
 #define mbedtls/config
